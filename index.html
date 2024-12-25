@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Document</title>
+</head>
+<style>
+    .btn-wide {
+        width: 440px;
+        font-weight: bolder;
+    }
+
+    /* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(163, 142, 255);
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
+
+
+
+    .navbar {
+        background-color: rgb(255, 255, 255) !important;
+        box-shadow: none; 
+        transition: background-color 0.3s; 
+    }
+    
+    .navbar.nav-sticky {
+        background-color: rgba(255, 255, 255, 0.8); 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    }
+    
+   
+    :root{
+        scroll-padding-top: 100px;
+    }
+    
+    #partnership img:hover  {
+        transform: scale(1.1);
+        transition: transform 0.3s ;
+    }
+    
+   
+   
+    .main-theme{
+        height: 700px;
+        width: 2000px;
+    }
+    .aboutus{
+        width: 100%;
+        height: 200px;
+    }
+    .curser{
+        cursor: pointer;
+    }
+    
+   
+   
+
+
+    .aboutus-img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    }
+
+    .card:hover {
+    transform: translatey(-5px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    }
+
+    body{
+        background-color: #F8F9FA;
+    }
+
+
+    
+</style>
+<body>
+   <!-- homepage -->
+            <div class="container-fluid fixed-top">
+            <nav class="navbar navbar-expand-md navbar-light" style="background-color: transparent; box-shadow: none;">
+            <a href="#" class="navbar-brand ms-2">
+                <img src="institue logo.png" alt="Logo" height="80" width="190px" class="me-2"> 
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-nav">
+            <ul class="navbar-nav ms-auto me-5">
+                <li class="nav-item ms-3 h5 fw-bolder"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item ms-3 h5 fw-bolder"><a class="nav-link" href="#about">About Us</a></li>
+                <li class="nav-item ms-3 h5 fw-bolder"><a class="nav-link" href="#partnership">Partners</a></li>
+                <li class="nav-item ms-3 h5 fw-bolder"><a class="nav-link" href="#course">Courses</a></li>
+                <li class="nav-item ms-3 h5 fw-bolder"><a class="nav-link" href="#contactus">Contact Us</a></li>
+                <li class="nav-item ms-3 h5 fw-bolder"> 
+                    <button class="Btn" data-bs-toggle="modal" data-bs-target="#LoginModal">
+                      
+                      <div class="sign"><svg viewBox="0 0 512 512"><path d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg></div>
+                      
+                      <div class="text">Login</div>
+                    </button>
+                    
+                    
+                    </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!-- model login -->
+    <div class="modal fade" id="LoginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Login</h3>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                            <div class="form-group">
+                                <label class="form-label">User name</label>
+                                <input type="text" placeholder="Enter User Name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input type="Password" placeholder="Enter Password" class="form-control">
+                            </div>  
+                    </form>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-secondary">Login</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+<!-- Carousel -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div id="mycar" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#mycar" data-bs-slide-to="0"  ></button>
+                    <button type="button" data-bs-target="#mycar" data-bs-slide-to="1" class="active"></button>
+                    <button type="button" data-bs-target="#mycar" data-bs-slide-to="2" ></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="themepage.jpg" alt="Slide 1" class="d-block w-100" height="690px">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="themepage1.jpg" alt="Slide 2" class="d-block w-100" height="690px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="themepage2.jpg" alt="Slide 3" class="d-block w-100" height="690px">
+                    </div>
+                </div>
+                <!-- Carousel controls -->
+                <button class="carousel-control-prev" data-bs-target="#mycar" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                
+                <button class="carousel-control-next" data-bs-target="#mycar" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <br>
+<!-- About us -->
+<div class="container-fluid contactus-border py-5 bg-light" id="about">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold display-4 text-primary">Why Choose Us?</h2>
+        <p class="text-muted">Empowering Future Innovators Through Quality IT Education</p>
+    </div>
+
+    <!-- Image and Welcome Message -->
+    <div class="row align-items-center mb-5">
+        <div class="col-12 col-md-6 text-center">
+            <img class="img-fluid rounded aboutus-img" src="about-us template.png" alt="Why Choose Us">
+        </div>
+        <div class="col-12 col-md-6">
+            <p class="h5 text-secondary">
+                Welcome to LearnSphere Institute, a premier destination for quality IT education and training. 
+                We empower individuals with cutting-edge technical skills, bridging the gap between academic 
+                knowledge and industry demands.
+            </p>
+        </div>
+    </div>
+
+    <!-- Key Highlights -->
+    <div class="row text-center">
+        <div class="col-12 col-md-4 mb-4">
+            <div class="card border-0 p-3">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Expert Instructors</h5>
+                    <p>
+                        Learn from industry professionals with years of practical experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="card border-0 p-3">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Cutting-Edge Curriculum</h5>
+                    <p>
+                        Stay ahead with courses tailored to the latest industry trends.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="card border-0 p-3">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Recognized Excellence</h5>
+                    <p>
+                        Trusted by students and companies worldwide for quality education.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Awards Section -->
+    <div class="text-center my-5">
+        <h3 class="fw-bold text-primary">Awards and Achievements</h3>
+        <p class="text-secondary">Recognizing our excellence in IT education and innovation</p>
+        <ul class="list-unstyled">
+            <li class="p-2">Best IT Education Provider 2023 - Global Education Awards</li>
+            <li class="p-2">Top Innovator in IT Training - Tech Leaders Summit</li>
+            <li class="p-2">Excellence in Online Learning - National Educators Forum</li>
+        </ul>
+    </div>
+
+    <!-- Contributors Section -->
+    <div class="text-center my-5">
+        <h3 class="fw-bold text-primary">Our Contributors</h3>
+        <p class="text-muted">Meet the people behind our success</p>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">D.N Vasu patnaik</h5>
+                        <p>Founder & CEO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card border-0">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">V.Abhishek</h5>
+                        <p>Chief Technology Officer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card border-0">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">R.Bharat</h5>
+                        <p>Chairman</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <!-- Partners Section -->
+<div class="container-fluid py-5" id="partnership">
+    <h2 class="fw-bold display-4 text-primary text-center mb-5">We Work with the Best Partners</h2>
+    <div class="row text-center justify-content-center">
+        <!-- Partner 1 -->
+        <div class="col-6 col-md-3 mb-4">
+            <img class="img-fluid rounded shadow-sm" src="com1.jpeg" alt="Partner 1 Logo">
+        </div>
+        <!-- Partner 2 -->
+        <div class="col-6 col-md-3 mb-4">
+            <img class="img-fluid rounded shadow-sm" src="cpm2.png" alt="Partner 2 Logo">
+        </div>
+        <!-- Partner 3 -->
+        <div class="col-6 col-md-3 mb-4">
+            <img class="img-fluid rounded shadow-sm" src="com3.png" alt="Partner 3 Logo">
+        </div>
+        <!-- Partner 4 -->
+        <div class="col-6 col-md-3 mb-4">
+            <img class="img-fluid rounded shadow-sm" src="com1.jpeg" alt="Partner 4 Logo">
+        </div>
+    </div>
+    <div class="row text-center justify-content-center">
+        <!-- Partner 5 -->
+        <div class="col-6 col-md-3 mb-4">
+            <img class="img-fluid rounded shadow-sm" src="com5.png" alt="Partner 5 Logo">
+        </div>
+        <!-- Partner 6 -->
+        <div class="col-6 col-md-3 mb-4">
+            <img class="img-fluid rounded shadow-sm" src="com6.png" alt="Partner 6 Logo">
+        </div>
+        <!-- Partner 7 -->
+        <div class="col-6 col-md-3 mb-4">
+            <img class="img-fluid rounded shadow-sm" src="cpm8.png" alt="Partner 7 Logo">
+        </div>
+        <!-- Partner 8 -->
+        <div class="col-6 col-md-3 mb-4">
+            <img class="img-fluid rounded shadow-sm" src="comlast.png" alt="Partner 8 Logo">
+        </div>
+    </div>
+</div>
+
+
+ 
+
+ <!-- Course -->
+  <div class="border-course" id="course"><br>
+    <p class="fw-bold display-4 text-primary text-center">Popular Courses</p><br>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <img class="img-fluid" src="fullstack.png" alt="Full Stack Web Development">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Full Stack Web Development</h5>
+                    <p class="text-secondary">Building robust web applications involves mastering both frontend and backend technologies. Frontend development focuses on the user interface.</p><br>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary mb-1 " >Book A Free Demo</button><br>
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#FullStackModal">Know More</button>
+                </div>
+            </div>
+        </div>
+        <!-- model1 -->
+        <div class="modal fade" id="FullStackModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="text-center">Full Stack Development</h3>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <h4 class="text-center text-primary">Concepts We Teach</h4>
+                        <ul>
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>React, Angular</li>
+                            <li>Node.js, Express.js</li>
+                            <li>MongoDB, MySQL</li>
+                            <li>Git, GitHub</li>
+                            <li>REST APIs</li>
+                        </ul>
+                        <p class="h5">Fee Structure : 20,300</p>
+                        <p class="h5">course duration 6 months with placement guarantee</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center align-items-center">
+                        <button class="btn btn-info rounded-5">Continue</button>
+                        <button class="btn btn-info rounded-5" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-12 col-md-4">
+            <div class="card ">
+                <div class="card-header d-flex justify-content-center">
+                    <img class="img-fluid" height="" width="400px" src="aiiiii.jpeg" alt="Full Stack Web Development">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Artificial Intelligence</h5>
+                    <p class="text-secondary">Learn to build robust Artificial Intelligence using python and its libraries,Artificial Intelligence (AI) is a branch of computer science .</p><br>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary mb-1 " >Book A Free Demo</button><br>
+                    <button class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#ai">Know More</button>
+                    
+                </div>
+                
+            </div>
+        </div>
+        <!-- modal2 -->
+        <div class="modal fade" id="ai">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="text-center">Artificial Intelligence</h3>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="text-center text-primary">Concepts We Teach</h4>
+                        <ul>
+                            <li>Python Programming Language</li>
+                                    <li>NumPy (Numerical Computing)</li>
+                                    <li>Pandas (Data Manipulation)</li>
+                                    <li>Matplotlib (Data Visualization)</li>
+                                    <li>Seaborn (Statistical Data Visualization)</li>
+                                    <li>Scikit-learn (Machine Learning Algorithms)</li>
+                                    <li>TensorFlow (Deep Learning Framework)</li>
+                                    <li>Keras (High-Level Neural Networks API)</li>
+                                    <li>PyTorch (Deep Learning Framework)</li>
+                                    <li>OpenCV (Computer Vision Library)</li>
+                                    <li>NLTK (Natural Language Processing)</li>
+                                    <li>spaCy (Advanced NLP Library)</li>
+                                    <li>Scipy (Scientific Computing)</li>
+                                    <li>XGBoost (Gradient Boosting for ML)</li>
+                                    <li>LightGBM (Gradient Boosting for ML)</li>
+                                    <li>Hugging Face Transformers (Pre-trained NLP Models)</li>
+                                    <li>fastai (Deep Learning Framework)</li>
+                                    <li>PyCaret (Automated Machine Learning)</li>
+                                    <li>Flask (Web Framework for AI models)</li>
+                                    <li>Django (Web Framework for AI models)</li>
+                        </ul>
+                        <p class="h5">Fee Structure : 15,000</p>
+                        <p class="h5">course duration 6 months with placement guarantee</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center align-items-center">
+                        <button class="btn btn-info rounded-5">Continue</button>
+                        <button class="btn btn-info rounded-5" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+    <div class="col-12 col-md-4">    
+    <div class="card">
+        <div class="card-header">
+            <img class="img-fluid" src="c3.jpg" alt="Cybersecurity">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Cybersecurity</h5>
+            <p class="text-secondary">Cybersecurity involves protecting systems, networks, and data from digital attacks, theft, and damage.</p>
+        </div>
+        <div class="card-footer text-center">
+            <button class="btn btn-primary mb-1 " >Book A Free Demo</button><br>
+
+            <button class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#cs">Know More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="cs" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" id="csLabel">Cybersecurity</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center text-primary">Concepts We Teach</h4>
+                <ul>
+                    <li>Python Programming Language (for scripting and automation)</li>
+                    <li>Wireshark (Network Packet Analyzer)</li>
+                    <li>Nmap (Network Scanning Tool)</li>
+                    <li>Metasploit (Penetration Testing Framework)</li>
+                    <li>Kali Linux (Penetration Testing OS)</li>
+                    <li>Burp Suite (Web Application Security Testing)</li>
+                    <li>OWASP ZAP (Open Source Web Security Scanner)</li>
+                    <li>Snort (Intrusion Detection System)</li>
+                    <li>Splunk (Security Information and Event Management)</li>
+                    <li>ELK Stack (Elasticsearch, Logstash, Kibana for Threat Monitoring)</li>
+                    <li>OpenVAS (Vulnerability Scanning)</li>
+                    <li>Hashcat (Password Cracking Tool)</li>
+                    <li>John the Ripper (Password Cracking Tool)</li>
+                    <li>CyberArk (Privileged Access Management)</li>
+                    <li>Nessus (Vulnerability Assessment)</li>
+                    <li>Qualys (Cloud Security and Compliance)</li>
+                    <li>ClamAV (Open Source Antivirus)</li>
+                    <li>Fortinet (Firewall and Network Security)</li>
+                    <li>IBM QRadar (SIEM for Threat Detection)</li>
+                    <li>Azure Sentinel (Cloud SIEM Solution)</li>
+                </ul>
+                <p class="h5">Fee Structure: ₹21,000</p>
+                <p class="h5">Course Duration: 7 months with placement guarantee</p>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-info rounded-5">Continue</button>
+                <button class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+            </div><br>
+            <!-- this is an acccordion -->
+           
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <h2 class="text-primary">FAQ</h2>
+                    <div class="accordion" id="ouracc">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#colone">
+                                    What types of courses are available?
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse" id="colone" data-bs-parent="#ouracc">
+                                <div class="accordion-body">
+                                    We offer courses in programming, data science, AI/ML, web development, and more.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#coltwo">
+                                    Are the courses self-paced?
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse" id="coltwo" data-bs-parent="#ouracc">
+                                <div class="accordion-body">
+                                    Yes, most courses are self-paced, but some live courses have fixed schedules.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#colthree">
+                                    Do I receive a certificate after completing the course?
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse" id="colthree" data-bs-parent="#ouracc">
+                                <div class="accordion-body">
+                                    Yes, you'll receive a certificate upon successful completion of the course.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#colfour">
+                                    What is the refund policy?
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse" id="colfour" data-bs-parent="#ouracc">
+                                <div class="accordion-body">
+                                    We offer a full refund if requested within 7 days of enrollment.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#colfive">
+                                    Can I interact with instructors?
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse" id="colfive" data-bs-parent="#ouracc">
+                                <div class="accordion-body">
+                                    Yes, for live courses, you can interact with instructors during sessions. Self-paced courses include a discussion forum for queries.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- this is an acccordion -->
+        </div>
+        </div>
+    </div>
+    <br><br><br>
+</div>
+</div><br>
+
+
+    
+
+<!-- contactus -->
+
+
+        <div class="contactus-border" id="contactus"><br>
+            <h2 class="fw-bold display-4 text-primary text-center">Contact Us</h2><br>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Left side: Map -->
+                <div class="col-12 col-md-6">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60875.45016928701!2d78.30298555978698!3d17.521082798461265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9279676f8f1d%3A0x6d53fb3b4ed44f8a!2sMiyapur%2C%20Telangana!5e0!3m2!1sen!2sin!4v1734514416316!5m2!1sen!2sin" width="100%"  height="450" style="border:0;" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+        
+                <!-- Right side: Contact Us Form -->
+                <div class="col-12 col-md-6">
+                    
+                    <form >
+                        <div class="mb-3">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" >Email</label>
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" >Message</label>
+                            <textarea class="form-control"  rows="4" placeholder="Write your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary ">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+       
+</div><br><br>
+
+ <!--footer -->
+<footer>
+    <div class="container-fluid bg-dark text-light py-5">
+        <div class="row text-center">
+            <div class="col-12 col-md-4 mb-4">
+                <h5>About Us</h5>
+                <p class="small">
+                    We are committed to providing the best services to our customers.
+                    Follow us for more updates.
+                </p>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Services</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <h5>Contact Us</h5>
+                <p class="small">Miyapur, Hyderabad, India</p>
+                <p class="small">Email: vasupatnail23@example.com</p>
+                <p class="small">Phone: +91 9347728932</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-end"> <!-- Align to the left -->
+                <a href="#" class="text-light mx-2">
+                    <i class="fab fa-facebook fa-lg"></i>
+                </a>
+                <a href="#" class="text-light mx-2">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a href="#" class="text-light mx-2">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+                <a href="#" class="text-light mx-2">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-12 text-center">
+            <p class="small">© 2024 VasuPatnaik. All rights reserved.</p>
+            
+        </div>
+        
+    </div>
+</footer>
+
+</body>
+</html>
